@@ -9,3 +9,13 @@ export class RoomFeature {
         this.id = id;
     }
 }
+
+export class RoomFeatureRegisterDTO {
+    serviceName: string;
+    servicePrice: number;
+
+    constructor(serviceName: string, servicePrice: number) {
+        this.serviceName = serviceName;
+        this.servicePrice = servicePrice;
+    }
+}
