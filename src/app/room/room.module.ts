@@ -7,6 +7,7 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
 import { RoomFormComponent } from './components/room-form/room-form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RoomRoutingModule,
     NgxPaginationModule,
     HttpClientModule,
+    FormsModule
   ]
 })
 export class RoomModule { }
