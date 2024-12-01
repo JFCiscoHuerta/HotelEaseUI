@@ -6,20 +6,20 @@ import { RoomFormComponent } from './components/room-form/room-form.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: RoomListComponent
-  },
-  {
-    path: ':id',
-    component: RoomDetailsComponent
-  },
-  {
     path: 'create',
     component: RoomFormComponent
   },
   {
     path: 'update/:id',
     component: RoomFormComponent
+  },
+  {
+    path: ':id',
+    component: RoomDetailsComponent
+  },
+  {
+    path: '',
+    component: RoomListComponent
   }
 ];
 
