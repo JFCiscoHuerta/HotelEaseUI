@@ -7,3 +7,11 @@ export class RoomImage {
         this.id = id;
     }
 }
+
+export class RoomImageRegisterDTO {
+    path: string;
+
+    constructor(path: string) {
+        this.path = path;
+    }
+}
