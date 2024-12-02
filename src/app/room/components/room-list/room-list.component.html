@@ -1,16 +1,1 @@
-<div class="container">
-    <h2>Rooms List</h2>
-  
-    <ul>
-      <li *ngFor="let room of rooms | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
-        {{ room.roomNumber }} - {{ room.roomType }} - {{ room.priceByNight }}
-      </li>
-    </ul>
-  
-    <pagination-controls
-      (pageChange)="currentPage = $event"
-      previousLabel="Anterior"
-      nextLabel="Siguiente"
-    >
-    </pagination-controls>
-  </div>
+<p>room-list works!</p>
