@@ -1,4 +1,3 @@
-
 <form (ngSubmit)="saveRoom()">
 
     <div>
@@ -34,7 +33,13 @@
     </div>
 
     <div>
-        <label for="roomFeatureIds"> Room Features: </label>
+        <label for="roomFeatureIds">Room Features:</label>
+        <select id="roomFeatureIds" name="roomFeatureIds">
+            <option [value]="null">Selecciona un servicio</option>
+            <option *ngFor="let feature of roomFeatures" [value]="feature.id">
+                {{ feature.serviceName }} | {{ feature.servicePrice }}
+            </option>
+        </select>
     </div>
 
     <button type="submit">Save Room</button>

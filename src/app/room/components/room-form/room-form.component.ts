@@ -3,6 +3,8 @@ import { RoomService } from '../../services/room.service';
 import { RoomRegisterDTO } from '../../models/room.model';
 import { RoomState } from '../../models/room-state.enum';
 import { RoomType } from '../../models/room-type.enum';
+import { RoomFeatureService } from '../../services/room-feature.service';
+import { RoomFeature } from '../../models/room-feature.model';
 
 @Component({
   selector: 'app-room-form',
@@ -10,6 +12,8 @@ import { RoomType } from '../../models/room-type.enum';
   styleUrls: ['./room-form.component.css']
 })
 export class RoomFormComponent {
+
+  constructor(private roomService: RoomService, private roomFeatureService: RoomFeatureService) {}
 
   room: RoomRegisterDTO = {
     roomNumber: 0,
@@ -22,11 +26,16 @@ export class RoomFormComponent {
 
   roomStates = Object.values(RoomState);
   roomTypes = Object.values(RoomType);
+  roomFeatures: RoomFeature[] = [];
 
-  constructor(private service: RoomService) {}
+  ngOnInit() {
+    this.roomFeatureService.getRoomFeatures().subscribe( (data) => {
+      this.roomFeatures = data
+    });
+  }
 
   saveRoom(): void {
-    this.service.saveRoom(this.room).subscribe({
+    this.roomService.saveRoom(this.room).subscribe({
       next: (savedRoom) => {
         alert('Room saved successfully');
       },
