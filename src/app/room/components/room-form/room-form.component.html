@@ -1,1 +1,47 @@
-<p>room-form works!</p>
+<form (ngSubmit)="saveRoom()">
+
+    <div>
+        <label for="roomNumber">Room Number:</label>
+        <input id="roomNumber" name="roomNumber" [(ngModel)]="room.roomNumber" required type="number">
+    </div>
+
+    <div>
+        <label for="priceByNight">Price by night:</label>
+        <input id="priceByNight" name="priceByNight" [(ngModel)]="room.priceByNight" required type="number">
+    </div>
+
+    <div>
+        <label for="roomState">Room state</label>
+        <select id="roomState" name="roomState">
+            <option *ngFor="let state of roomStates" [value]="state">
+                {{ state }}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType">
+            <option *ngFor="let type of roomTypes" [value]="type">
+                {{ type }}
+            </option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="roomImages">Room Images</label>
+    </div>
+
+    <div>
+        <label for="roomFeatureIds">Room Features:</label>
+        <select id="roomFeatureIds" name="roomFeatureIds">
+            <option [value]="null">Selecciona un servicio</option>
+            <option *ngFor="let feature of roomFeatures" [value]="feature.id">
+                {{ feature.serviceName }} | {{ feature.servicePrice }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit">Save Room</button>
+
+</form>
