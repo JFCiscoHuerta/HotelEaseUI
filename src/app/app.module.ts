@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RoomModule } from './room/room.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import { RoomModule } from './room/room.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RoomModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
