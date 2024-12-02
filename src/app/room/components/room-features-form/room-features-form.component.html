@@ -1,0 +1,18 @@
+
+<form (ngSubmit)="saveRoomFeature()">
+
+    <div>
+        <label for="serviceName">Service Name:</label>
+        <input id="serviceName" name="serviceName" [(ngModel)]="roomFeature.serviceName" required type="text">
+    </div>
+
+    <div>
+        <label for="servicePrice">Service Price:</label>
+        <input id="servicePrice" name="servicePrice" [(ngModel)]="roomFeature.servicePrice" type="text">
+    </div>
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
